@@ -1,0 +1,417 @@
+@charset "UTF-8";
+
+@font-face {
+    font-family: 'Apple SD Gothic Neo';
+    src: url('font/AppleSDGothicNeoR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Apple SD Gothic Neo', sans-serif;
+}
+body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+body {
+    height: 1080px;
+    background: #F6F9FF;
+    padding-right: 8px;
+}
+
+body:hover {
+    overflow-y: auto;
+}
+
+body::-webkit-scrollbar {
+    width: 8px; /* 스크롤 바 너비 */
+    position: fixed;
+}
+
+body::-webkit-scrollbar-thumb {
+background-color: #cac6c6; /* 스크롤 바의 색상 */
+border-radius: 8px; /* 스크롤 바의 모서리 둥글게 */
+}
+.home-main {
+    display:flex;
+    margin-bottom: 40px;
+    margin-left: 264px;
+}
+
+/* --------------- 헤더 부분 --------------- */
+.head-bar {
+    top: 0;
+    position: fixed;
+    width: 100%;
+    height: 120px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: var(--White, #FFF);
+}
+.hd-left {
+    display: flex;
+    gap: 116px;
+}
+.logo {
+    margin-left: 76px;
+    display: flex;
+    width: 112px;
+    height: 40px;
+    align-items: center;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.search-box {
+    position: relative;
+    display: flex;
+    box-sizing: border-box;
+    width: 400px;
+    height: 42px;
+    padding: 0px 12px;
+    align-items: center;
+    border-radius: 8px;
+    background: var(--foundation-grey-grey-05, #F3F3F3);
+}
+.search-bar {
+    flex: 1;
+    font-family: 'Arial', sans-serif;
+    width: 400px;
+    height: 42px;
+    text-indent: 32px;
+    border: none;
+    border-radius: 8px;
+    background: var(--foundation-grey-grey-05, #F3F3F3);
+    line-height: 1.2;
+}
+.search-bar:focus {
+    outline: none;
+    place-content: none;
+}
+.search-box img {
+    position: absolute;
+}
+.search-bar::placeholder {
+    color: var(--foundation-grey-grey-3, #ADADAD);
+    text-align: left;
+    text-indent: 32px;
+    font-size: 18px;
+    font-style: normal;
+    font-family: 'Arial', sans-serif;
+    font-weight: 500;
+    height: 100%; /* 높이를 100%로 설정 */
+}
+.hd-right {
+    display: flex;
+    gap: 40px;
+    margin-right: 40px;
+}
+.user-info {
+    display: inline-flex;
+    align-items: center;
+    max-width: 170px;
+    height: 43px;
+}
+
+.user-text{
+    align-items: center;
+    flex-direction: row;
+    margin: auto 27px auto 10px;
+}
+
+.user-name {
+    color: var(--foundation-grey-grey-10, #1D1D1D);
+    font-family: Nunito;
+    font-size: 15px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+}
+.user-status {
+    color: var(--foundation-grey-grey-4, #878787);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+/* --------------- 사이드 바 부분 --------------- */
+.side-wrap {
+    display:flex;
+}
+.side-bar {
+    box-sizing: border-box;
+    width: 264px;
+    height: 100%;
+    margin-top: 140px;
+    flex-shrink: 0;
+    left: 0;
+    border-radius: 0px 8px 8px 0px;
+    background: var(--White, #FFF);
+    position: fixed;
+}
+
+.side-menu {
+    color: var(--foundation-grey-grey-5, #626262);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 40px;
+    height: 280px;
+    margin-top: 42px;
+}
+
+.side-menu li {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    height: 24px;
+    padding-left: 40px;
+}
+
+.side-menu li.active {
+    color: var(--foundation-grey-grey-8, #2D2D2D);
+    font-family: Apple SD Gothic Neo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+
+    border-right: 4px solid #2EAFFF;
+}
+.side-menu li:hover {
+    color: var(--foundation-grey-grey-8, #2D2D2D);
+    font-family: Apple SD Gothic Neo;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    border-right: 4px solid #2EAFFF;
+    cursor: pointer;
+}
+
+.more-plan-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-sizing: border-box;
+    width: 184px;
+    height: 80px;
+    flex-shrink: 0;
+    border-radius: 12px;
+    background: var(--foundation-blue-blue-1, #E6F5FF);
+    margin-left: 40px;
+    margin-bottom: 104px;
+    position: fixed;
+    bottom: 0;
+}
+
+.mr-pl-bx-bx {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    width: 173px;
+    height: 57px;
+}
+mr-pl-bx-bx img {
+    width: 69px;
+    height: 57px;
+}
+
+.mr-pl-bx-bx-cont {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+}
+
+.bx-cont-div {
+    width: 92px;
+    color: var(--foundation-grey-grey-10, #1D1D1D);
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 12px; /* 120% */
+    opacity: 0.5;
+}
+
+.view-more-plan {
+    width: 92px;
+    height: 16px;
+    display: flex;
+    align-items: center;
+
+
+}
+.view-more-plan div {
+    color: var(--foundation-grey-grey-10, #1D1D1D);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    letter-spacing: -0.24px;
+}
+
+.view-more-plan img {
+    width: 16px;
+    height: 16px;
+}
+
+.sign-out {
+    position: fixed;
+    bottom: 0;
+    margin-left: 40px;
+    margin-bottom: 40px;
+    cursor:pointer;
+}
+
+/* --------------- 디자인 섹션 부분 --------------- */
+.design-main {
+    display:flex;
+    margin-bottom: 40px;
+    margin-left: 264px;
+}
+.ds-main-wrap{
+    width: 1500px;
+    height: 1266px;
+    display: inline-flex;
+    padding: 40px 0px;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    border-radius: 8px;
+    margin-top: 120px;
+    margin-left: 78px;
+}
+
+.ds-pj-type {
+    display: flex;
+    padding: 8px 12px;
+    align-items: center;
+    gap: 4px;
+    display: flex;
+    width: 107px;
+    height: 40px;
+
+    color: var(--foundation-grey-grey-7, #363636);
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 20px;
+    letter-spacing: -0.32px;
+    border-radius: 8px;
+
+    background: var(--foundation-grey-grey-05, #F3F3F3);
+    border: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+
+    background-image: url('/icons/Icon.svg');
+    background-repeat: no-repeat;
+    background-position: 90%;
+    padding-right: 30px; 
+
+    cursor: pointer;
+}
+
+.ds-cnts-list {
+    box-sizing: border-box;
+    display: grid;
+    grid-template-columns:repeat(4, 360px);
+    grid-template-rows:repeat(auto-fill,342px);
+    column-gap: 20px;
+    row-gap: 40px;
+    padding-right: 4px;
+    overflow: hidden;
+}
+
+.ds-pj-list:hover {
+    overflow-y: auto;
+}
+
+.ds-pj-list::-webkit-scrollbar {
+    width: 4px; /* 스크롤 바 너비 */
+    position: fixed;
+
+}
+
+.ds-pj-list::-webkit-scrollbar-thumb {
+    background-color: #cac6c6; /* 스크롤 바의 색상 */
+    border-radius: 4px; /* 스크롤 바의 모서리 둥글게 */
+}
+
+.contents {
+    width: 360px;
+    height: 342px;
+}
+.con-thumbnail {
+    box-sizing: border-box;
+    display: flex;
+    width: 360px;
+    height: 292px;
+    border-radius: 12px;
+    border: 1px solid var(--foundation-grey-grey-2, #D1D1D1);
+    background: #FFF;
+    align-items: center;
+    justify-content: center;
+}
+
+.con-thumbnail:hover {
+    cursor: pointer;
+    /* transform: scale(1.03); */
+}
+.star-btn{
+    /* position: inherit; */
+    background-color: white;
+    border: none;
+    width: 24px;
+    height: 24px;
+}
+
+.con-thumbnail img {
+    width: 360px;
+    height: 292px;
+    border-radius: 12px;
+    border: none;
+}
+
+.con-file-title {
+    display: flex;
+    width: 360px;
+    height: 40px;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.title-edit {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+
+.file-name {
+    color: var(--foundation-grey-grey-9, #242424);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}
+
+.edit-recent {
+    color: var(--foundation-grey-grey-4, #878787);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+}

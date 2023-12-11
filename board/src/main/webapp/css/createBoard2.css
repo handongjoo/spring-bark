@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Apple SD Gothic Neo';
+    src: url('/font/AppleSDGothicNeoR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Apple SD Gothic Neo', sans-serif;
+}
+body{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.create-wrap {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 500px;
+}
+
+.create-wrap h3 {
+    text-align: center;
+    border-bottom: 1px solid rgb(218, 218, 218);
+    padding: 10px 0;
+}
+
+.create-box {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.img-icon-box {
+    height: 50px;
+    border: 1px solid rgb(207, 206, 206);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+.my-info{
+    font-weight: bold;
+}
+.write-content-title {
+    height: 40px;
+    border: none;
+    border-bottom: 1px solid rgb(207, 206, 206);
+    border-top: 1px solid rgb(207, 206, 206);
+    font-size: 15px;
+}
+.write-content-box {
+    width: 500px;
+    height: 150px;
+    resize: none;
+    border: none;
+    font-size: 20px;
+}
+.write-content-box:focus{
+    outline: none;
+}
+
+.submit-btn {
+    height: 30px;
+    border: none;
+    border-radius: 15px;
+}
+input[type="file"] {
+	display: none;
+}
+
+/* 미리보기 이미지 스타일링 */
+#image-preview {
+	max-width: 100%;
+	max-height: 400px;
+	margin-top: 10px;
+	display: none;
+}

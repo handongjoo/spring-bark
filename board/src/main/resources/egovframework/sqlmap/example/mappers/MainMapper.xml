@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="egovframework.example.main.service.MainMapper">
+
+	<!-- 유저 확인 -->
+	<select id="findUserById" parameterType="String" resultType="UserVo">
+		SELECT
+		author, password
+		FROM users
+		WHERE author = #{author}
+	</select>
+	
+	<!-- 회원 가입 -->
+	<insert id="registerUser" parameterType="UserVo">
+		INSERT INTO users 
+		(author, password)
+		VALUES
+		(#{author}, #{password})
+	</insert>
+
+	<!-- 게시글 목록 -->
+	<select id="selectList" resultType="MainVo">
+		SELECT 
+		board_id, title, author, visiting, createdAt
+		FROM boards
+		ORDER BY createdAt DESC
+	</select>
+	
+	<!-- 게시글 작성 -->
+    <insert id="insertBoard" parameterType="MainVo">
+        INSERT INTO boards (title, content, author, imageFile)
+        VALUES (#{title}, #{content}, #{author}, #{imageFile})
+    </insert>
+    
+    <!-- 게시글 삭제 -->
+    <delete id="deleteBoard" parameterType="int">
+    	DELETE FROM boards
+    	WHERE board_id = #{board_id}
+    </delete>
+    
+    <!-- 게시글 수정 -->
+    <update id="updateBoard" parameterType="MainVo">
+    	UPDATE boards
+    	SET title = #{title}, content = #{content}
+    	WHERE board_id = #{board_id}
+    </update>
+    
+    <!-- 게시글 상세 -->
+    <select id="detailBoard" parameterType="int" resultType="MainVo">
+    	SELECT
+    	board_id, title, content, author, visiting, createdAt
+    	FROM boards
+    	WHERE board_id = #{board_id}
+    </select>
+    
+    <!-- 댓글 목록 -->
+    <select id="getComment" parameterType="int" resultType="CommentVo">
+    	SELECT
+    	comment_id, author, c_content, c_createdAt
+    	FROM comment
+    	WHERE board_id = #{board_id}
+    	ORDER BY comment_id DESC
+    </select>
+    
+    <!-- 댓글 작성 -->
+    <insert id="insertComment" parameterType="CommentVo">
+    	INSERT INTO comment
+    	(c_content, board_id, author)
+    	VALUES
+    	(#{c_content}, #{board_id}, #{author})
+    </insert>
+	
+
+</mapper>
