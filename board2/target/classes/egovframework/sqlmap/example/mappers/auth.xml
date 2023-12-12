@@ -9,6 +9,12 @@
 		WEHRE user_id = #{userId}
 	</select>
 	
+	<select id="getUserByNick" parameterType="String" resultType="String">
+		SELECT
+		nickname
+		WEHRE nickname = #{nickname}
+	</select>
+	
 	<!-- 유저 생성(회원가입) -->
 	<insert id="createUser" parameterType="AuthVo">
 		INSERT INTO users

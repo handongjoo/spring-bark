@@ -23,7 +23,12 @@ public class AuthDaoImpl implements AuthDao {
 	public void createUser(AuthVo authVo) throws Exception {
 		AuthMapper mapper = sqlSession.getMapper(AuthMapper.class);
 		mapper.createUser(authVo);
-		
+	}
+
+	@Override
+	public String getUserByNick(String nickname) throws Exception {
+		AuthMapper mapper = sqlSession.getMapper(AuthMapper.class);
+		return mapper.getUserByNick(nickname);
 	}
 
 }

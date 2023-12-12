@@ -8,4 +8,6 @@ public interface AuthService {
 
 	void createUser(AuthVo authVo) throws Exception;
 
+	String getUserByNick(String nickname) throws Exception;
+
 }

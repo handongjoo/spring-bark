@@ -32,9 +32,11 @@ public class AuthController {
 	@RequestMapping(value="/createUser", method = RequestMethod.POST)
 	public String createUser(AuthVo authVo) throws Exception {
 		AuthVo user = authService.getUserById(authVo.getUserId());
-		
+		String nick = authService.getUserByNick(authVo.getNickname());
 		if(user != null) {
 			return "fail";
+		} else if (nick != null) {
+			return "duplFail";
 		}
 		authService.createUser(authVo);
 		return "success";

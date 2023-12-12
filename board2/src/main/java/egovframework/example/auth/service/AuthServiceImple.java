@@ -23,4 +23,9 @@ public class AuthServiceImple implements AuthService {
 		
 	}
 
+	@Override
+	public String getUserByNick(String nickname) throws Exception {
+		return authDao.getUserByNick(nickname);
+	}
+
 }
