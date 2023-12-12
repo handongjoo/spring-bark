@@ -19,4 +19,27 @@ public class BoardServiceImple implements BoardService {
 		return boardDao.getBoardList();
 	}
 
+	@Override
+	public void createBoard(BoardVo boardVo) throws Exception {
+		boardDao.createBoard(boardVo);
+		
+	}
+
+	@Override
+	public void updateBoard(BoardVo boardVo) throws Exception {
+		boardDao.updateBoard(boardVo);
+		
+	}
+
+	@Override
+	public void deleteBoard(int boardId) throws Exception {
+		boardDao.deleteBoard(boardId);
+		
+	}
+
+	@Override
+	public BoardVo getBoardDetail(int boardId) throws Exception {
+		return boardDao.getBoardDetail(boardId);
+	}
+
 }
