@@ -1,0 +1,84 @@
+@charset "UTF-8";
+@font-face {
+    font-family: 'Apple SD Gothic Neo';
+    src: url('/font/AppleSDGothicNeoR.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    font-family: 'Apple SD Gothic Neo', sans-serif;
+    list-style: none;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;;
+}
+h1 {
+    margin-top: 100px;
+}
+h1 img {
+    width :60px;
+    height: 60px;
+    margin-right: 10px;
+}
+.register-form {
+    width: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    gap: 15px;
+}
+.register-form input {
+    height: 35px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 15px;
+    border: none;
+    box-shadow: 1px 1px 3px 0 black
+}
+.register-form button{
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+/*     color: white; */
+}
+.division {
+    border: 0.3px solid rgb(193, 193, 193);
+}
+
+.register-btn {
+    background-color: #467ce9;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+    color: white;
+}
+
+#auth-validate,
+#pw-validate,
+#check-validate {
+	font-size: 12px;
+	color:red;
+	display: none;
+}
+
+.loginPage {
+	width: 200px;
+	margin-top: 15px;
+    height: 40px;
+    border-radius: 5px;
+    padding: 5px;
+    font-size: 17px;
+    border: none;
+    font-weight: bold;
+	color: black;
+	box-shadow: 1px 1px 3px 0 black;
+}
