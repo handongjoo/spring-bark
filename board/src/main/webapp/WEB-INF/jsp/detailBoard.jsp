@@ -27,23 +27,23 @@
             <div class="con-img">
                 <img src="${data.imageFile}">
             </div>
-            <c:if test="${info.author eq data.author}">
-			<div class="edit-btn">
-	            <button id="update-btn">수정</button>
-	            <button id="delete-btn">삭제</button>
-			</div>
-            </c:if>
+	            <c:if test="${info.author eq data.author}">
+					<div class="edit-btn">
+			            <button id="update-btn">수정</button>
+			            <button id="delete-btn">삭제</button>
+					</div>
+	            </c:if>
             <div class="division-line"></div>
             <div class="comments-list">
             	<c:forEach items="${list}" var="list">
-                <div class="comments-wrap">
+                	<div class="comments-wrap">
                     <div class="cmt-user-name">${list.author}</div>
                     <div class="cmt-content">${list.c_content}
-                   <c:if test="${info.author eq list.author}">
-                   <span><button>삭제</button></span>
-                   </c:if>
+                   		<c:if test="${info.author eq list.author}">
+            				<span><button>삭제</button></span>
+                   		</c:if>
                     </div>
-                </div>
+                	</div>
                 </c:forEach>
             </div>
         </div>
