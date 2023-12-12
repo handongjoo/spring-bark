@@ -1,10 +1,14 @@
 package egovframework.example.board.controller;
 
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import egovframework.example.board.service.BoardService;
+import egovframework.example.board.vo.BoardVo;
 
 @Controller
 public class BoardController {
@@ -15,7 +19,11 @@ public class BoardController {
 	// --------------- jsp 페이지 렌더링 --------------- //
 	
 	@RequestMapping(value="/main.do")
-	public String mainPage() {
+	public String mainPage(Model model) throws Exception{
+		
+		List<BoardVo> list = boardService.getBoardList();
+		model.addAttribute("list", list);
+	
 		return "main";
 	}
 	
@@ -28,5 +36,9 @@ public class BoardController {
 	public String boardUpdatePage() {
 		return "boardUpdate";
 	}
+	
+	// --------------- Board 관련 기능 --------------- //
+	
+	//게시글 불러오기
 	
 }
